@@ -19,6 +19,11 @@ std::string get_input(std::string str)
 	{
 		std::cout << str;
 		getline(std::cin, input);
+		if (std::cin.eof())
+		{
+			std::cout <<std::endl << "EOF was inputted" << std::endl;
+			exit (0);
+		}
 		input = trim_front_space(input);
 	}
 	return (input);
@@ -31,6 +36,11 @@ std::string get_input_number(std::string str)
 	{
 		std::cout << str;
 		getline(std::cin, input);
+		if (std::cin.eof())
+		{
+			std::cout <<std::endl << "EOF was inputted" << std::endl;
+			exit (0);
+		}
 		input = trim_front_space(input);
 		if (input.length() == 0 || only_space(input))
 			continue;

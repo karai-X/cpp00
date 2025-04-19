@@ -9,6 +9,11 @@ int	main(void)
 	{
 		std::cout << "Enter Command(ADD/SEARCH/EXIT): ";
 		getline(std::cin, input);
+		if (std::cin.eof())
+		{
+			std::cout <<std::endl << "EOF was inputted" << std::endl;
+			exit (0);
+		}
 		if (input == "ADD")
 		{
 			add_to_phonebook(&phonebook);
@@ -37,6 +42,11 @@ void	search_in_phonebook(PhoneBook *phonebook)
 		{
 			std::cout << "Input Index Number: ";
 			getline(std::cin, str_idx);
+			if (std::cin.eof())
+			{
+				std::cout <<std::endl << "EOF was inputted" << std::endl;
+				exit (0);
+			}
 			if (is_numeric_range(str_idx) == false)
 			{
 				std::cout << "Must Input Valid Number!!" << std::endl;
