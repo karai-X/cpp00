@@ -6,6 +6,8 @@
 #include "utils.hpp"
 # include <string>
 # include <iostream>
+#include <cstdlib>
+#include <sstream>
 
 void	add_to_phonebook(PhoneBook *phonebook);
 void	search_in_phonebook(PhoneBook *phonebook);

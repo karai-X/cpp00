@@ -4,6 +4,7 @@
 # include <iostream>
 # include <string>
 # include <iomanip>
+#include <cstdlib>
 
 void	print_custom_setw(std::string str);
 std::string get_input(std::string str);

@@ -12,7 +12,7 @@ $(NAME): $(OBJS)
 	$(CC) -o $@ $^ $(CFLAGS)
 
 %.o: %.cpp
-	$(CC) -c $< -o $@
+	$(CC) -c $< -o $@ $(CFLAGS)
 
 clean:
 	rm -f $(OBJS)

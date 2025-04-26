@@ -55,14 +55,12 @@ std::string get_input_number(std::string str)
 std::string trim_front_space(std::string str)
 {
 	int	len;
-	int	start_pos;
+	size_t	start_pos;
 
 	len = str.length();
 	start_pos = 0;
-	for (char c : str)
+	while(std::isspace(static_cast<unsigned char>(str[start_pos])) && start_pos < str.size())
 	{
-		if (!std::isspace(static_cast<unsigned char>(c)))
-			break ;
 		start_pos += 1;
 	}
 	return (str.substr(start_pos, len));
@@ -70,20 +68,24 @@ std::string trim_front_space(std::string str)
 
 bool	only_space(std::string str)
 {
-	for (char c : str)
+	size_t start_pos = 0;
+	while(start_pos < str.size())
 	{
-		if (!std::isspace(static_cast<unsigned char>(c)))
+		if (!std::isspace(static_cast<unsigned char>(str[start_pos])))
 			return (false);
+		start_pos += 1;
 	}
 	return (true);
 }
 
 bool	is_numeric_range(std::string str)
 {
-	for (char c : str)
+	size_t start_pos = 0;
+	while(start_pos < str.size())
 	{
-		if (!('0' <= c && c <= '9'))
+		if (!('0' <= str[start_pos] && str[start_pos] <= '9'))
 			return (false);
+		start_pos += 1;
 	}
 	return (true);
 }

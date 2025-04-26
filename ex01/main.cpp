@@ -52,13 +52,11 @@ void	search_in_phonebook(PhoneBook *phonebook)
 				std::cout << "Must Input Valid Number!!" << std::endl;
 				return ;
 			}
-			try{
-				input_idx = std::stoi(str_idx);
-			}catch (std::out_of_range& e){
-				std::cout << "Number is Out Of Range!!" << std::endl;
-				return ;
-			}catch (std::exception& e){
-				std::cout << "Unexpected Error!!" << std::endl;
+			std::istringstream iss(str_idx);
+			iss >> input_idx;
+			if (iss.fail())
+			{
+				std::cout << "Out of int range!!" << std::endl;
 				return ;
 			}
 			phonebook->search(input_idx);
