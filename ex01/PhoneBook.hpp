@@ -6,6 +6,7 @@
 # include <iomanip>
 # include <string>
 #include <sstream>
+#include <stdio.h>
 
 class PhoneBook
 {

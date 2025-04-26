@@ -3,6 +3,7 @@
 Contact::Contact()
 {
 	_filled = false;
+	_idx = -1;
 }
 
 Contact::Contact(std::string first_name, std::string last_name,

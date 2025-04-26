@@ -13,6 +13,7 @@ void PhoneBook::add(std::string first_name, std::string last_name,
 			phone_number, darkest_secret, _idx);
 	_idx_array = (_idx_array + 1) % 8;
 	_idx += 1;
+	printf("idx %d\n", _idx);
 }
 
 bool PhoneBook::print_search(void)
