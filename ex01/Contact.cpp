@@ -46,3 +46,16 @@ std::string Contact::get_darkest_secret(void)
 {
 	return (Darkest_Secret);
 }
+
+bool Contact::get_filed(){
+	return (_filled);
+}
+int Contact::get_idx(){
+	return _idx;
+}
+void Contact::set_filed(bool filed){
+	_filled = filed;
+}
+void Contact::set_idx(int idx){
+	_idx = idx;
+}

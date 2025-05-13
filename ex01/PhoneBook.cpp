@@ -25,11 +25,11 @@ bool PhoneBook::print_search(void) {
   std::cout << "     Index|First Name| Last Name| Nick Name|" << std::endl;
   for (int i = 0; i < 8; i++) {
     now_idx = (_idx_array + i) % 8;
-    if (Contact_Array[now_idx]._filled) {
+    if (Contact_Array[now_idx].get_filed()) {
       print_flag = true;
 	  oss.str("");
 	  oss.clear();
-      oss << Contact_Array[now_idx]._idx;
+      oss << Contact_Array[now_idx].get_idx();
       str = oss.str();
       print_custom_setw(str);
       print_custom_setw(Contact_Array[now_idx].get_first_name());
@@ -46,7 +46,7 @@ bool PhoneBook::print_search(void) {
 
 void PhoneBook::search(int search_idx) {
   for (int i = 0; i < 8; i++) {
-    if (Contact_Array[i]._idx == search_idx) {
+    if (Contact_Array[i].get_idx() == search_idx) {
       this->print(Contact_Array[i]);
       return;
     }
